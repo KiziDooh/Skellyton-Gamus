@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvvs7jtw47uj8"]
+[gd_scene load_steps=12 format=3 uid="uid://dvvs7jtw47uj8"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="1_7sq33"]
 [ext_resource type="PackedScene" uid="uid://b0o65a5kp7s7y" path="res://Models/charactor.tscn" id="2_5vxo6"]
 [ext_resource type="PackedScene" uid="uid://se1tdmx2gf25" path="res://Models/pillar.tscn" id="2_0103l"]
 [ext_resource type="PackedScene" uid="uid://u6hk7la0w6t8" path="res://Models/BOX.tscn" id="3_5vxo6"]
 [ext_resource type="PackedScene" uid="uid://dimylg5wfqvds" path="res://Models/hooman.tscn" id="5_5vxo6"]
+[ext_resource type="PackedScene" uid="uid://c8u4gsk7rhqlw" path="res://Models/meanlilguy.tscn" id="6_wqs6y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7sq33"]
 sky_top_color = Color(0.582877, 0.290408, 0.746021, 1)
@@ -79,3 +80,12 @@ transform = Transform3D(-0.0805411, 0, -0.0592716, 0, 0.1, 0, 0.0592716, 0, -0.0
 
 [node name="whoman" parent="." instance=ExtResource("5_5vxo6")]
 transform = Transform3D(-0.0965921, 0, -0.0258836, 0, 0.1, 0, 0.0258836, 0, -0.0965921, 3.93289, 0.0758586, 2.7944)
+
+[node name="Node3D" parent="." instance=ExtResource("6_wqs6y")]
+transform = Transform3D(0.0494781, 0, -0.295892, 0, 0.3, 0, 0.295892, 0, 0.0494781, 13.7436, -0.400807, 14.5264)
+
+[node name="Node3D2" parent="." instance=ExtResource("6_wqs6y")]
+transform = Transform3D(0.0494781, 0, -0.295892, 0, 0.3, 0, 0.295892, 0, 0.0494781, 12.1269, -0.400807, 14.5264)
+
+[node name="Node3D3" parent="." instance=ExtResource("6_wqs6y")]
+transform = Transform3D(0.0494781, 0, -0.295892, 0, 0.3, 0, 0.295892, 0, 0.0494781, 16.0057, -0.400807, 14.5264)
