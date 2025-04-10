@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvvs7jtw47uj8"]
+[gd_scene load_steps=9 format=3 uid="uid://dvvs7jtw47uj8"]
 
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="1_xdm8y"]
-[ext_resource type="PackedScene" uid="uid://se1tdmx2gf25" path="res://proto_controller/pillar.tscn" id="2_ydtkd"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="1_7sq33"]
+[ext_resource type="PackedScene" uid="uid://se1tdmx2gf25" path="res://Models/pillar.tscn" id="2_0103l"]
+[ext_resource type="PackedScene" uid="uid://u6hk7la0w6t8" path="res://Models/BOX.tscn" id="3_5vxo6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xdm8y"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -32,9 +33,10 @@ shadow_enabled = true
 environment = SubResource("Environment_yujbc")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7656, 0, -15.24)
 material_override = SubResource("StandardMaterial3D_ydtkd")
 use_collision = true
-size = Vector3(51.5986, 0.429688, 57.0898)
+size = Vector3(73.1298, 0.429688, 87.5698)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.654671, 2.34622, 16.4768)
@@ -49,17 +51,20 @@ operation = 2
 radius = 2.0
 height = 2.13232
 
-[node name="ProtoController" parent="." instance=ExtResource("1_xdm8y")]
+[node name="ProtoController" parent="." instance=ExtResource("1_7sq33")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28976, 0, 8.65943)
 
-[node name="pillar" parent="." instance=ExtResource("2_ydtkd")]
+[node name="pillar" parent="." instance=ExtResource("2_0103l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0832, 0.35706, 7.42491)
 
-[node name="pillar2" parent="." instance=ExtResource("2_ydtkd")]
+[node name="pillar2" parent="." instance=ExtResource("2_0103l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5992, 0.35706, -9.63054)
 
-[node name="pillar3" parent="." instance=ExtResource("2_ydtkd")]
+[node name="pillar3" parent="." instance=ExtResource("2_0103l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.38092, 0.357059, -20.3086)
 
-[node name="pillar4" parent="." instance=ExtResource("2_ydtkd")]
+[node name="pillar4" parent="." instance=ExtResource("2_0103l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.521442, 0.35706, 8.03025)
+
+[node name="BOX2" parent="." instance=ExtResource("3_5vxo6")]
+transform = Transform3D(-1.18607, 0.0446691, -5.88143, 3.1461, 5.07414, -0.595918, 4.96943, -3.20173, -1.02647, -171, -8.707, -51.635)
