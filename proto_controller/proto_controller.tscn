@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs72ogkvdd7d6"]
+[gd_scene load_steps=6 format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://b7xxhe74pkd0h" path="res://proto_controller/proto_controller.gd" id="1_ucva2"]
+[ext_resource type="PackedScene" uid="uid://b0o65a5kp7s7y" path="res://Models/charactor.tscn" id="2_pwkxi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
 albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
@@ -27,6 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_iof21")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 1.7, 0)
+
+[node name="skelly" parent="Head" instance=ExtResource("2_pwkxi")]
+transform = Transform3D(-0.0164163, 0, -0.116852, 0, 0.118, 0, 0.116852, 0, -0.0164163, -0.10053, -2.11259, -1.29015)
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
