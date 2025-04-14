@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvvs7jtw47uj8"]
+[gd_scene load_steps=14 format=3 uid="uid://dvvs7jtw47uj8"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="1_7sq33"]
+[ext_resource type="Script" uid="uid://bl5ks87c5xj5a" path="res://Scenes/ray_cast_3d.gd" id="2_5hugj"]
 [ext_resource type="PackedScene" uid="uid://b0o65a5kp7s7y" path="res://Models/charactor.tscn" id="2_5vxo6"]
 [ext_resource type="PackedScene" uid="uid://se1tdmx2gf25" path="res://Models/pillar.tscn" id="2_0103l"]
 [ext_resource type="PackedScene" uid="uid://u6hk7la0w6t8" path="res://Models/BOX.tscn" id="3_5vxo6"]
@@ -28,6 +29,9 @@ albedo_color = Color(0.337255, 0.309804, 0.337255, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdm8y"]
 albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5hugj"]
+radius = 1.60203
 
 [node name="Node3D" type="Node3D"]
 
@@ -59,6 +63,20 @@ height = 2.13232
 
 [node name="ProtoController" parent="." instance=ExtResource("1_7sq33")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28976, 0, 8.65943)
+
+[node name="RayCast3D" type="RayCast3D" parent="ProtoController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0513134, 1.61322, 0)
+target_position = Vector3(0, 0, -4)
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("2_5hugj")
+
+[node name="Area3D" type="Area3D" parent="ProtoController/RayCast3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.29154, -7.49033, -3.34345)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ProtoController/RayCast3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71576, 7.19179, -0.458621)
+shape = SubResource("SphereShape3D_5hugj")
 
 [node name="pillar" parent="." instance=ExtResource("2_0103l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0832, 0.35706, 7.42491)

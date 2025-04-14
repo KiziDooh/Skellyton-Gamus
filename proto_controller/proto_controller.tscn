@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bs72ogkvdd7d6"]
 
-[ext_resource type="Script" uid="uid://b7xxhe74pkd0h" path="res://proto_controller/proto_controller.gd" id="1_ucva2"]
+[ext_resource type="Script" uid="uid://b7xxhe74pkd0h" path="res://Scripts/proto_controller.gd" id="1_ucva2"]
 [ext_resource type="PackedScene" uid="uid://b0o65a5kp7s7y" path="res://Models/charactor.tscn" id="2_pwkxi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
