@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvvs7jtw47uj8"]
+[gd_scene load_steps=17 format=3 uid="uid://dvvs7jtw47uj8"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://proto_controller/proto_controller.tscn" id="1_7sq33"]
+[ext_resource type="Script" uid="uid://buqak5bbnx73p" path="res://Scripts/meanlilguy.gd" id="1_t4rfy"]
 [ext_resource type="Script" uid="uid://bl5ks87c5xj5a" path="res://Scripts/SummonRay.gd" id="2_5hugj"]
 [ext_resource type="PackedScene" uid="uid://b0o65a5kp7s7y" path="res://Models/charactor.tscn" id="2_5vxo6"]
 [ext_resource type="PackedScene" uid="uid://se1tdmx2gf25" path="res://Models/pillar.tscn" id="2_0103l"]
@@ -37,6 +38,7 @@ radius = 1.60203
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ksha"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_t4rfy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5, 0.866025, -3.78552e-08, 0, -4.37114e-08, -1, -0.866025, 0.5, -2.18557e-08, 0, 0, 0)
@@ -110,19 +112,38 @@ transform = Transform3D(-0.0805411, 0, -0.0592716, 0, 0.1, 0, 0.0592716, 0, -0.0
 [node name="whoman" parent="." instance=ExtResource("5_5vxo6")]
 transform = Transform3D(-0.0965921, 0, -0.0258836, 0, 0.1, 0, 0.0258836, 0, -0.0965921, 3.93289, 0.0758586, 2.7944)
 
-[node name="Node3D" parent="." instance=ExtResource("6_wqs6y")]
+[node name="evil1" parent="." instance=ExtResource("6_wqs6y")]
 transform = Transform3D(0.0494781, 0, -0.295892, 0, 0.3, 0, 0.295892, 0, 0.0494781, 13.7436, -0.400807, 14.5264)
+script = null
 
-[node name="wow" type="Area3D" parent="Node3D"]
+[node name="wow" type="Area3D" parent="evil1"]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/wow"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="evil1/wow"]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 3.56851, 0)
 shape = SubResource("SphereShape3D_8ksha")
 
-[node name="Node3D2" parent="." instance=ExtResource("6_wqs6y")]
+[node name="evil2" parent="." instance=ExtResource("6_wqs6y")]
 transform = Transform3D(0.0494781, 0, -0.295892, 0, 0.3, 0, 0.295892, 0, 0.0494781, 12.1269, -0.400807, 14.5264)
+script = null
 
-[node name="Node3D3" parent="." instance=ExtResource("6_wqs6y")]
+[node name="vow" type="Area3D" parent="evil2"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="evil2/vow"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 3.56851, 0)
+shape = SubResource("SphereShape3D_8ksha")
+
+[node name="evil3" parent="." instance=ExtResource("6_wqs6y")]
 transform = Transform3D(0.0494781, 0, -0.295892, 0, 0.3, 0, 0.295892, 0, 0.0494781, 16.0057, -0.400807, 14.5264)
+script = null
+
+[node name="bow" type="Area3D" parent="evil3"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="evil3/bow"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 3.56851, 0)
+shape = SubResource("SphereShape3D_8ksha")
