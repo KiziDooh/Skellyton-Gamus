@@ -47,3 +47,4 @@ func summon(which,whichguy):
 		which.position.x = Global.sx
 		which.position.z = Global.sz
 		which.position.y = Global.py
+		wsprt = 0
